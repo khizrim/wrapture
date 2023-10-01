@@ -1,0 +1,26 @@
+@import url('~@gravity-ui/uikit/styles/styles.css');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.g-root {
+  --g-color-base-brand: rgb(117 155 255);
+  --g-color-base-brand-hover: rgb(99 143 255);
+  --g-color-base-selection: rgb(82 130 255 / 5%);
+  --g-color-base-selection-hover: rgb(82 130 255 / 10%);
+  --g-color-line-brand: rgb(117 155 255);
+  --g-color-text-brand: rgb(117 155 255);
+  --g-color-text-brand-contrast: rgb(255 255 255);
+  --g-color-text-link: rgb(117 155 255);
+  --g-color-text-link-hover: rgb(82 130 255);
+}
+
+.g-root_theme_dark {
+  --g-color-base-background: rgb(32 33 36);
+}

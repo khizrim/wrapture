@@ -1,0 +1,18 @@
+.options {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px 24px 32px;
+}
+
+.logo {
+  width: 250px;
+}
