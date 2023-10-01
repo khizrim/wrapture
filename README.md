@@ -1,4 +1,4 @@
-# Wrapture: Wrap the text in html or custom templates
+# Wrapture: Wrap the text in HTML or custom templates
 
 ![Wrapture Logo](public/images/icon-64.png)
 
