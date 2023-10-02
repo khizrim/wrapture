@@ -18,13 +18,13 @@ To install Wrapture, follow these steps:
 
 **Manual Installation:**
 
-* Clone this repository or download the source code.
+- Clone this repository or download the source code.
 
-* Open your Chrome browser and go to `chrome://extensions/`.
+- Open your Chrome browser and go to `chrome://extensions/`.
 
-* Enable "Developer mode" at the top right.
+- Enable "Developer mode" at the top right.
 
-* Click "Load unpacked" and select the folder where you cloned or downloaded the source code.
+- Click "Load unpacked" and select the folder where you cloned or downloaded the source code.
 
 ## Getting Started
 
@@ -34,7 +34,6 @@ After installation, you can get started with Wrapture:
 
 2. The Wrapture settings page will open, ready for you to use its powerful features.
 
-
 ## Troubleshooting
 
 If you encounter any issues or have questions, consider the following:
@@ -42,7 +41,6 @@ If you encounter any issues or have questions, consider the following:
 - **For Support:** Contact our support team at [khizrim@khizrim.ru](mailto:khizrim@khizrim.ru).
 
 - **Reporting Bugs:** If you find a bug or issue, please report it on our [GitHub repository](https://github.com/khizrim/omneelinq/issues).
-
 
 ## Acknowledgments
 
