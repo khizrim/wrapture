@@ -1,0 +1,65 @@
+name: Publish Chrome Extension
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Semantic Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+      - name: Update Version Numbers
+        run: |
+          # Update manifest.json version
+          jq --arg new_version "${{ github.ref_name }}" '.version = $new_version' public/manifest.json > public/manifest.json.tmp
+          mv public/manifest.json.tmp public/manifest.json
+
+          # Update package.json version
+          npm version --no-git-tag-version "${{ github.ref_name }}"
+
+      - name: Commit and Push Version Changes
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add public/manifest.json package.json
+          git commit -m "chore: Update version to ${{ github.ref_name }}"
+          git push origin HEAD:master
+
+      - name: Build Extension
+        run: pnpm run build
+
+      - name: Zip Extension
+        run: zip -r extension.zip ./build
+
+      - name: Publish Extension to Chrome Web Store
+        uses: mnao305/chrome-extension-upload@v4.0.1
+        with:
+          file-path: ./extension.zip
+          extension-id: ${{ secrets.EXTENSION_ID }}
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          refresh-token: ${{ secrets.REFRESH_TOKEN }}
