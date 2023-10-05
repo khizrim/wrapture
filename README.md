@@ -18,13 +18,27 @@ To install Wrapture, follow these steps:
 
 **Manual Installation:**
 
-- Clone this repository or download the source code.
+1. Clone this repository or download the source code.
 
-- Open your Chrome browser and go to `chrome://extensions/`.
+2. Install project dependencies using `pnpm` by running the following command:
 
-- Enable "Developer mode" at the top right.
+   ```bash
+   pnpm install
 
-- Click "Load unpacked" and select the folder where you cloned or downloaded the source code.
+3. Build the extension using Webpack with the following command:
+
+   ```bash
+   pnpm run build
+
+4. Open your Chrome browser and navigate to chrome://extensions/.
+
+5. Enable "Developer mode" in the top right corner of the page.
+
+6. Click the "Load unpacked" button.
+
+7. Select the `/build` folder that was generated during the build process.
+
+Your Wrapture extension should now be installed and ready for use in your Chrome browser.
 
 ## Getting Started
 
