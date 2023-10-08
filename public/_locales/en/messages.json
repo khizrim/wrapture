@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Wrapture",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Easily wrap selected text in custom defined HTML templates.",
+    "description": "Extension description"
+  }
+}

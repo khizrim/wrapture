@@ -10,6 +10,7 @@
     "noUnusedLocals": true,
     "module": "es2022",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
 
     "target": "es5",
     "jsx": "react",

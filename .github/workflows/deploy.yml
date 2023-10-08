@@ -30,7 +30,7 @@ jobs:
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: pnpm dlx semantic-release
 
       - name: Update Version Numbers
         run: |
@@ -58,7 +58,7 @@ jobs:
       - name: Publish Extension to Chrome Web Store
         uses: mnao305/chrome-extension-upload@v4.0.1
         with:
-          file-path: ./extension.zip
+          file-path: ./wrapture.zip
           extension-id: ${{ secrets.EXTENSION_ID }}
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}

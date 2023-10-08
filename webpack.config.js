@@ -1,15 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: path.join(__dirname, 'src/index.tsx'),
+    options: path.join(__dirname, 'src/index.tsx'),
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].js',
+    filename: '[name]/[name].js',
     assetModuleFilename: 'assets/[hash][ext]',
     clean: true,
   },
@@ -39,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'url-loader',
+        use: ['@svgr/webpack'],
       },
     ],
   },
@@ -49,8 +48,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html',
+      filename: 'options/options.html',
+      template: './public/options/options.html',
     }),
     new CopyPlugin({
       patterns: [
@@ -58,15 +57,15 @@ module.exports = {
           from: 'public',
           to: '.',
           globOptions: {
-            ignore: ['**/index.html'],
+            ignore: ['**/options/options.html'],
           },
         },
       ],
     }),
   ],
+  stats: 'errors-only',
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    usedExports: true,
   },
-  stats: 'errors-only',
 };

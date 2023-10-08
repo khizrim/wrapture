@@ -1,13 +1,15 @@
 {
-  "name": "Wrapture",
-  "description": "",
-  "version": "1.0.0",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "0.1.0",
   "manifest_version": 3,
+  "default_locale": "en",
+  "author": "kh.makhmudov@gmail.com",
   "icons": {
-    "16": "/images/icon-16.png",
-    "32": "/images/icon-32.png",
-    "64": "/images/icon-64.png",
-    "128": "/images/icon-128.png"
+    "16": "/icons/16.png",
+    "32": "/icons/32.png",
+    "64": "/icons/64.png",
+    "128": "/icons/128.png"
   },
-  "options_page": "index.html"
+  "options_page": "options/options.html"
 }

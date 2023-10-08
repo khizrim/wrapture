@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { ThemeProvider } from '@gravity-ui/uikit';
+import { Icon } from '@gravity-ui/uikit';
 
-import { Logo } from 'src/components/Logo';
-
-import styles from './App.module.css';
+import fullLogo from 'src/images/logo-full.svg';
 
 export const App = () => {
   return (
