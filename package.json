@@ -1,20 +1,20 @@
 {
   "name": "wrapture",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easily wrap selected text in custom defined HTML templates",
   "main": "index.tsx",
   "scripts": {
     "build": "webpack",
     "start": "webpack --watch",
-    "lint": "pnpm run lint:code && pnpm run lint:styles && pnpm run lint:prettier",
+    "lint": "pnpm lint:code && pnpm lint:styles && pnpm lint:prettier",
     "lint:code": "eslint './src/**/*.{js,jsx,ts,tsx}'",
     "lint:styles": "stylelint './src/**/*.css'",
     "lint:prettier": "prettier --check './src' './public'",
-    "lint:fix": "pnpm run lint:code --fix && pnpm run lint:styles --fix",
+    "lint:fix": "pnpm lint:prettier --write && pnpm lint:code --fix && pnpm run lint:styles --fix",
     "type-check": "tsc --noEmit"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20",

@@ -1,2 +1,2 @@
-export * from './App';
-export * from './Logo';
+export * from './Options';
+export * from './Popup';

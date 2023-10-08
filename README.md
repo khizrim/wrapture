@@ -1,6 +1,6 @@
 # Wrapture: Wrap the text in HTML or custom templates
 
-![Wrapture Logo](public/icons/icon-64.png)
+![Wrapture Logo](public/icons/48.png)
 
 **Wrapture** is a Chrome extension that allows you to easily wrap selected text in custom defined HTML templates.
 

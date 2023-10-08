@@ -4,7 +4,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    options: path.join(__dirname, 'src/index.tsx'),
+    popup: path.join(__dirname, 'src/popup.tsx'),
+    options: path.join(__dirname, 'src/options.tsx'),
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -50,6 +51,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'options/options.html',
       template: './public/options/options.html',
+      chunks: ['options'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'popup/popup.html',
+      template: './public/popup/popup.html',
+      chunks: ['popup'],
     }),
     new CopyPlugin({
       patterns: [
@@ -57,7 +64,7 @@ module.exports = {
           from: 'public',
           to: '.',
           globOptions: {
-            ignore: ['**/options/options.html'],
+            ignore: ['**/options/options.html', '**/popup/popup.html'],
           },
         },
       ],
